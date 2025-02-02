@@ -2,20 +2,33 @@ package br.com.horadoponto.horadoponto.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import jakarta.persistence.*;
 
 import br.com.horadoponto.horadoponto.entities.enums.EmployeeStatus;
 
+@Entity
+@Table(name = "tb_employee")
 public class Employee implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Column(unique = true)
     private String email;
     private String phone;
     private LocalDate birthDate;
     private String password;
 
     private EmployeeStatus status;
+
+    @OneToMany(mappedBy = "employee")
+    private List<TimeEntry> timeEntries = new ArrayList<>();
 
     public Employee() {
     }

@@ -1,13 +1,20 @@
 package br.com.horadoponto.horadoponto.entities;
 
+import jakarta.persistence.*;
+
 import java.time.Instant;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_time_entries")
 public class TimeEntry {
 
+    @Id
     private Long id;
     private Instant moment;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
     private Employee employee;
 
     public TimeEntry() {
