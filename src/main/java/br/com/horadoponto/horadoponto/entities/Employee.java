@@ -27,19 +27,24 @@ public class Employee implements Serializable {
 
     private EmployeeStatus status;
 
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
+
     @OneToMany(mappedBy = "employee")
     private List<TimeEntry> timeEntries = new ArrayList<>();
 
     public Employee() {
     }
 
-    public Employee(Long id, String name, String email, String phone, LocalDate birthDate, String password, EmployeeStatus status) {
+    public Employee(Long id, String name, String email, String phone, LocalDate birthDate, String password, Department department, EmployeeStatus status) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.birthDate = birthDate;
         this.password = password;
+        this.department = department;
         this.status = status;
     }
 
@@ -91,12 +96,24 @@ public class Employee implements Serializable {
         this.password = password;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     public EmployeeStatus getStatus() {
         return status;
     }
 
     public void setStatus(EmployeeStatus status) {
         this.status = status;
+    }
+
+    public List<TimeEntry> getTimeEntries() {
+        return timeEntries;
     }
 
     @Override

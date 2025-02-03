@@ -2,12 +2,13 @@ package br.com.horadoponto.horadoponto.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_time_entries")
-public class TimeEntry {
+public class TimeEntry implements Serializable {
 
     @Id
     private Long id;

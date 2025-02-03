@@ -1,12 +1,23 @@
 package br.com.horadoponto.horadoponto.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "tb_department")
 public class Department implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employees = new ArrayList<>();
 
     public Department() {
     }
@@ -30,6 +41,10 @@ public class Department implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
     }
 
     @Override
