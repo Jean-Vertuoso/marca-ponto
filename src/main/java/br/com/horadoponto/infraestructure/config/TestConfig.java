@@ -1,21 +1,21 @@
-package br.com.horadoponto.horadoponto.infraestructure.config;
+package br.com.horadoponto.infraestructure.config;
 
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-import br.com.horadoponto.horadoponto.infraestructure.entities.TimeEntry;
-import br.com.horadoponto.horadoponto.infraestructure.repositories.TimeEntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import br.com.horadoponto.horadoponto.infraestructure.entities.Department;
-import br.com.horadoponto.horadoponto.infraestructure.entities.Employee;
-import br.com.horadoponto.horadoponto.infraestructure.entities.enums.EmployeeStatus;
-import br.com.horadoponto.horadoponto.infraestructure.repositories.DepartmentRepository;
-import br.com.horadoponto.horadoponto.infraestructure.repositories.EmployeeRepository;
+import br.com.horadoponto.infraestructure.entities.Department;
+import br.com.horadoponto.infraestructure.entities.Employee;
+import br.com.horadoponto.infraestructure.entities.enums.EmployeeStatus;
+import br.com.horadoponto.infraestructure.entities.TimeEntry;
+import br.com.horadoponto.infraestructure.repositories.DepartmentRepository;
+import br.com.horadoponto.infraestructure.repositories.EmployeeRepository;
+import br.com.horadoponto.infraestructure.repositories.TimeEntryRepository;
 
 @Configuration
 @Profile("test")
