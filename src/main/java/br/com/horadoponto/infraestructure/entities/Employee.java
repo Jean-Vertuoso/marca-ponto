@@ -1,4 +1,4 @@
-package br.com.horadoponto.horadoponto.infraestructure.entities;
+package br.com.horadoponto.infraestructure.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -6,7 +6,7 @@ import java.util.*;
 
 import jakarta.persistence.*;
 
-import br.com.horadoponto.horadoponto.infraestructure.entities.enums.EmployeeStatus;
+import br.com.horadoponto.infraestructure.entities.enums.EmployeeStatus;
 
 @Entity
 @Table(name = "tb_employee")

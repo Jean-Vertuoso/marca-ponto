@@ -1,4 +1,4 @@
-package br.com.horadoponto.horadoponto.infraestructure.entities.enums;
+package br.com.horadoponto.infraestructure.entities.enums;
 
 public enum EmployeeStatus {
     WORKING,
