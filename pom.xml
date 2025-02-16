@@ -63,6 +63,24 @@
 <!--		</dependency>-->
 
 		<dependency>
+			<groupId>com.gtbr</groupId>
+			<artifactId>via-cep</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>8.0.1.Final</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
@@ -74,6 +92,13 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>repsy</id>
+			<url>https://repo.repsy.io/mvn/thalles/via-cep</url>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>
