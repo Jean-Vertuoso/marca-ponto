@@ -1,4 +1,4 @@
-package br.com.horadoponto.infraestructure.entities;
+package br.com.horadoponto.infrastructure.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -6,7 +6,7 @@ import java.util.*;
 
 import jakarta.persistence.*;
 
-import br.com.horadoponto.infraestructure.entities.enums.EmployeeStatus;
+import br.com.horadoponto.infrastructure.entities.enums.EmployeeStatus;
 
 @Entity
 @Table(name = "tb_employee")
@@ -15,44 +15,55 @@ public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name", length = 100)
     private String name;
-    @Column(unique = true)
+
+    @Column(name = "email", unique = true, length = 100)
     private String email;
+
+    @Column(name = "birth_date")
     private LocalDate birthDate;
+
+    @Column(name = "password")
     private String password;
-    @Enumerated(EnumType.STRING)
+
+    @Column(name = "status")
     private EmployeeStatus status;
 
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "tb_employee_address",
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "address_id"))
-    private Set<Address> addresses = new HashSet<>();
+    private List<Address> addresses = new ArrayList<>();
 
-    @OneToMany(mappedBy = "employee")
-    private Set<Phone> phones = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private List<Phone> phones = new ArrayList<>();
 
-    @OneToMany(mappedBy = "employee")
-    private Set<AbsenceRegistry> absenceRegistries = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private List<AbsenceRegistry> absenceRegistries = new ArrayList<>();
 
-    @OneToMany(mappedBy = "employee")
-    private Set<TimeEntry> timeEntries = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private List<TimeEntry> timeEntries = new ArrayList<>();
 
     public Employee() {
     }
 
-    public Employee(Long id, String name, String email, LocalDate birthDate, String password, Department department, EmployeeStatus status) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.birthDate = birthDate;
-        this.password = password;
+    public Employee(Department department, EmployeeStatus status, String password, LocalDate birthDate, String email, String name, Long id) {
         this.department = department;
         this.status = status;
+        this.password = password;
+        this.birthDate = birthDate;
+        this.email = email;
+        this.name = name;
+        this.id = id;
     }
 
     public Long getId() {
@@ -95,14 +106,6 @@ public class Employee implements Serializable {
         this.password = password;
     }
 
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
     public EmployeeStatus getStatus() {
         return status;
     }
@@ -111,19 +114,27 @@ public class Employee implements Serializable {
         this.status = status;
     }
 
-    public Set<Address> getAddresses() {
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public List<Address> getAddresses() {
         return addresses;
     }
 
-    public Set<Phone> getPhones() {
+    public List<Phone> getPhones() {
         return phones;
     }
 
-    public Set<AbsenceRegistry> getAbsenceRegistries() {
+    public List<AbsenceRegistry> getAbsenceRegistries() {
         return absenceRegistries;
     }
 
-    public Set<TimeEntry> getTimeEntries() {
+    public List<TimeEntry> getTimeEntries() {
         return timeEntries;
     }
 

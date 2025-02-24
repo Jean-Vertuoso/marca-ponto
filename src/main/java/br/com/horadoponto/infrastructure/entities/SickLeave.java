@@ -1,4 +1,4 @@
-package br.com.horadoponto.infraestructure.entities;
+package br.com.horadoponto.infrastructure.entities;
 
 import java.io.File;
 import java.io.Serializable;

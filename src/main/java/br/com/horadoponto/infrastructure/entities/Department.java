@@ -1,4 +1,4 @@
-package br.com.horadoponto.infraestructure.entities;
+package br.com.horadoponto.infrastructure.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,9 +14,11 @@ public class Department implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "department")
+    @OneToMany
     private List<Employee> employees = new ArrayList<>();
 
     public Department() {
