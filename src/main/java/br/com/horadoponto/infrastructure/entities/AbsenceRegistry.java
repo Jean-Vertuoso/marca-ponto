@@ -1,4 +1,4 @@
-package br.com.horadoponto.infraestructure.entities;
+package br.com.horadoponto.infrastructure.entities;
 
 import jakarta.persistence.*;
 
@@ -13,8 +13,14 @@ public class AbsenceRegistry implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "start_time")
     private LocalDateTime startTime;
+
+    @Column(name = "end_time")
     private LocalDateTime endTime;
 
     @ManyToOne

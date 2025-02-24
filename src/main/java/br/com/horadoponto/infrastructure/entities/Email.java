@@ -1,4 +1,4 @@
-package br.com.horadoponto.infraestructure.entities;
+package br.com.horadoponto.infrastructure.entities;
 
 import jakarta.persistence.*;
 
@@ -9,7 +9,11 @@ public class Email {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "description")
     private String description;
 
     @OneToOne

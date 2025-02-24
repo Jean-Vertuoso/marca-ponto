@@ -1,4 +1,4 @@
-package br.com.horadoponto.infraestructure.config;
+/*package br.com.horadoponto.infrastructure.config;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -9,13 +9,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import br.com.horadoponto.infraestructure.entities.Department;
-import br.com.horadoponto.infraestructure.entities.Employee;
-import br.com.horadoponto.infraestructure.entities.enums.EmployeeStatus;
-import br.com.horadoponto.infraestructure.entities.TimeEntry;
-import br.com.horadoponto.infraestructure.repositories.DepartmentRepository;
-import br.com.horadoponto.infraestructure.repositories.EmployeeRepository;
-import br.com.horadoponto.infraestructure.repositories.TimeEntryRepository;
+import br.com.horadoponto.infrastructure.entities.Department;
+import br.com.horadoponto.infrastructure.entities.Employee;
+import br.com.horadoponto.infrastructure.entities.enums.EmployeeStatus;
+import br.com.horadoponto.infrastructure.entities.TimeEntry;
+import br.com.horadoponto.infrastructure.repositories.DepartmentRepository;
+import br.com.horadoponto.infrastructure.repositories.EmployeeRepository;
+import br.com.horadoponto.infrastructure.repositories.TimeEntryRepository;
 
 @Configuration
 @Profile("test")
@@ -53,4 +53,4 @@ public class TestConfig implements CommandLineRunner {
 
         tmEntRepository.saveAll(Arrays.asList(te011, te101, te111));
     }
-}
+}*/
