@@ -1,4 +1,4 @@
-package br.com.horadoponto.infraestructure.entities;
+package br.com.horadoponto.infrastructure.entities;
 
 import jakarta.persistence.*;
 
@@ -13,6 +13,8 @@ public class TimeEntry implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "moment")
     private Instant moment;
 
     @ManyToOne

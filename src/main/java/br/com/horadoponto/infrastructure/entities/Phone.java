@@ -1,4 +1,4 @@
-package br.com.horadoponto.infraestructure.entities;
+package br.com.horadoponto.infrastructure.entities;
 
 import jakarta.persistence.*;
 
@@ -11,8 +11,13 @@ public class Phone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "ddd")
     private String ddd;
+
+    @Column(name = "number")
     private String number;
+
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;
