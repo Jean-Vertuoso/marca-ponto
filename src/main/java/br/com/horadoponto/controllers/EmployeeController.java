@@ -1,5 +1,6 @@
 package br.com.horadoponto.controllers;
 
+import br.com.horadoponto.infrastructure.exceptions.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,9 +30,9 @@ public class EmployeeController {
     @PostMapping("/login")
     public String login(@RequestBody EmployeeDTO employeeDTO){
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(employeeDTO.getEmail(), employeeDTO.getPassword())
+                new UsernamePasswordAuthenticationToken(employeeDTO.getEmail(),
+                        employeeDTO.getPassword())
         );
-
         return "Bearer " + jwtUtil.generateToken(authentication.getName());
     }
 
