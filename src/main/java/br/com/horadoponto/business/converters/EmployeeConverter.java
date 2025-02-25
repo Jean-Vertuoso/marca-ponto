@@ -29,12 +29,8 @@ public class EmployeeConverter {
         employee.setPassword(employeeDTO.getPassword());
         employee.setStatus(employeeDTO.getStatus());
         employee.setDepartment(departmentRepository.getReferenceById(employeeDTO.getDepartment().getId()));
-        for (AddressDTO addressDTO : employeeDTO.getAddresses()) {
-            employee.getAddresses().add(toAddress(addressDTO));
-        }
-        for (PhoneDTO phoneDTO : employeeDTO.getPhones()) {
-            employee.getPhones().add(toPhone(phoneDTO));
-        }
+        employee.getAddresses().addAll(employeeDTO.getAddresses().stream().map(this::toAddress).toList());
+        employee.getPhones().addAll(employeeDTO.getPhones().stream().map(this::toPhone).toList());
 
         return employee;
     }
@@ -76,12 +72,8 @@ public class EmployeeConverter {
         employeeDTO.setPassword(employee.getPassword());
         employeeDTO.setStatus(employee.getStatus());
         employeeDTO.setDepartment(toDepartmentDTO(departmentRepository.getReferenceById(employee.getDepartment().getId())));
-        for (Address address : employee.getAddresses()) {
-            employeeDTO.getAddresses().add(toAddressDTO(address));
-        }
-        for (Phone phone : employee.getPhones()) {
-            employeeDTO.getPhones().add(toPhoneDTO(phone));
-        }
+        employeeDTO.getAddresses().addAll(employee.getAddresses().stream().map(this::toAddressDTO).toList());
+        employeeDTO.getPhones().addAll(employee.getPhones().stream().map(this::toPhoneDTO).toList());
         return employeeDTO;
     }
 
