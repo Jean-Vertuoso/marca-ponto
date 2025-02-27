@@ -1,13 +1,11 @@
 package br.com.horadoponto.controllers.dto;
 
-import br.com.horadoponto.infrastructure.entities.Address;
-
 public class AddressDTO {
 
-	private Long id;
 	private String zipCode;
 	private String street;
 	private Long number;
+	private String neighborhood;
 	private String city;
 	private String state;
 	private String country;
@@ -15,22 +13,14 @@ public class AddressDTO {
 	public AddressDTO() {
 	}
 
-	public AddressDTO(Long id, String zipCode, String street, Long number, String city, String state, String country) {
-		this.id = id;
+	public AddressDTO(String zipCode, String street, Long number,  String neighborhood, String city, String state, String country) {
 		this.zipCode = zipCode;
 		this.street = street;
 		this.number = number;
+		this.neighborhood = neighborhood;
 		this.city = city;
 		this.state = state;
 		this.country = country;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getZipCode() {
@@ -55,6 +45,14 @@ public class AddressDTO {
 
 	public void setNumber(Long number) {
 		this.number = number;
+	}
+
+	public String getNeighborhood() {
+		return neighborhood;
+	}
+
+	public void setNeighborhood(String neighborhood) {
+		this.neighborhood = neighborhood;
 	}
 
 	public String getCity() {

@@ -1,6 +1,7 @@
 package br.com.horadoponto.controllers;
 
-import br.com.horadoponto.infrastructure.exceptions.ResourceNotFoundException;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -10,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import br.com.horadoponto.business.services.EmployeeService;
 import br.com.horadoponto.controllers.dto.EmployeeDTO;
 import br.com.horadoponto.infrastructure.security.JwtUtil;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/employee")
@@ -36,14 +35,26 @@ public class EmployeeController {
         return "Bearer " + jwtUtil.generateToken(authentication.getName());
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<EmployeeDTO>> findAllEmployees(){
         List<EmployeeDTO> list = employeeService.findAllEmployees();
-        return ResponseEntity.ok().body(list);
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<EmployeeDTO>> findEmployeeByName(@RequestParam() String name){
+        List<EmployeeDTO> list = employeeService.findEmployeeByName(name);
+        return ResponseEntity.ok(list);
     }
 
     @PostMapping
-    public ResponseEntity<EmployeeDTO> saveUser(@RequestBody EmployeeDTO employeeDTO){
-        return ResponseEntity.ok(employeeService.saveUser(employeeDTO));
+    public ResponseEntity<EmployeeDTO> saveEmployee(@RequestBody EmployeeDTO employeeDTO){
+        return ResponseEntity.ok(employeeService.saveEmployee(employeeDTO));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteEmployee(@PathVariable Long id){
+        employeeService.deleteEmployee(id);
+        return ResponseEntity.noContent().build();
     }
 }

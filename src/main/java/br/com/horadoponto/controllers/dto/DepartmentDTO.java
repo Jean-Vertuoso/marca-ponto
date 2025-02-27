@@ -1,11 +1,5 @@
 package br.com.horadoponto.controllers.dto;
 
-import br.com.horadoponto.infrastructure.entities.Department;
-import br.com.horadoponto.infrastructure.entities.Employee;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class DepartmentDTO {
 
     private Long id;

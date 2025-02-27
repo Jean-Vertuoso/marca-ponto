@@ -1,11 +1,12 @@
 package br.com.horadoponto.infrastructure.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
-
-import jakarta.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_department")
@@ -18,8 +19,9 @@ public class Department implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @OneToMany
-    private List<Employee> employees = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
+    private Set<Employee> employees = new HashSet<>();
 
     public Department() {
     }
@@ -45,7 +47,7 @@ public class Department implements Serializable {
         this.name = name;
     }
 
-    public List<Employee> getEmployees() {
+    public Set<Employee> getEmployees() {
         return employees;
     }
 

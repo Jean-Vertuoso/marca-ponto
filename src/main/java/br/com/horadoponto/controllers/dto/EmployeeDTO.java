@@ -1,21 +1,19 @@
 package br.com.horadoponto.controllers.dto;
 
-import br.com.horadoponto.infrastructure.entities.Department;
-import br.com.horadoponto.infrastructure.entities.enums.EmployeeStatus;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.horadoponto.infrastructure.entities.enums.EmployeeStatus;
+
 public class EmployeeDTO {
 
-    private Long id;
     private String name;
     private String email;
     private LocalDate birthDate;
     private String password;
     private EmployeeStatus status;
-    private DepartmentDTO department;
+    private Long department_id;
 
     private List<AddressDTO> addresses = new ArrayList<>();
     private List<PhoneDTO> phones = new ArrayList<>();
@@ -25,14 +23,13 @@ public class EmployeeDTO {
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(Long id, String name, String email, LocalDate birthDate, String password, EmployeeStatus status, DepartmentDTO department) {
-        this.id = id;
+    public EmployeeDTO(String name, String email, LocalDate birthDate, String password, EmployeeStatus status, Long department_id) {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
         this.password = password;
         this.status = status;
-        this.department = department;
+        this.department_id = department_id;
     }
 
     public String getName() {
@@ -75,12 +72,12 @@ public class EmployeeDTO {
         this.status = status;
     }
 
-    public DepartmentDTO getDepartment() {
-        return department;
+    public Long getDepartment_id() {
+        return department_id;
     }
 
-    public void setDepartment(DepartmentDTO department) {
-        this.department = department;
+    public void setDepartment_id(Long department_id) {
+        this.department_id = department_id;
     }
 
     public List<AddressDTO> getAddresses() {
