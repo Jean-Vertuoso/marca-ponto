@@ -1,7 +1,7 @@
 package br.com.horadoponto.business.converters;
 
-import br.com.horadoponto.infrastructure.repositories.DepartmentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import br.com.horadoponto.controllers.dto.AddressDTO;
@@ -16,9 +16,6 @@ import br.com.horadoponto.infrastructure.entities.Phone;
 @Component
 public class EmployeeConverter {
 
-    @Autowired
-    private DepartmentRepository departmentRepository;
-
     // PARTE QUE CONVERTE DE DTO PARA DTO
     public Employee toEmployee(EmployeeDTO employeeDTO){
         Employee employee = new Employee();
@@ -28,11 +25,19 @@ public class EmployeeConverter {
         employee.setBirthDate(employeeDTO.getBirthDate());
         employee.setPassword(employeeDTO.getPassword());
         employee.setStatus(employeeDTO.getStatus());
-        employee.setDepartment(departmentRepository.getReferenceById(employeeDTO.getDepartment().getId()));
-        employee.getAddresses().addAll(employeeDTO.getAddresses().stream().map(this::toAddress).toList());
-        employee.getPhones().addAll(employeeDTO.getPhones().stream().map(this::toPhone).toList());
+        employee.setDepartment_id(employeeDTO.getDepartment_id());
+        employee.getAddresses().addAll(toAddressList(employeeDTO));
+        employee.getPhones().addAll(toPhoneList(employeeDTO));
 
         return employee;
+    }
+
+    public List<Address> toAddressList(EmployeeDTO employeeDTO){
+        return employeeDTO.getAddresses().stream().map(this::toAddress).toList();
+    }
+
+    public List<Phone> toPhoneList(EmployeeDTO employeeDTO){
+        return employeeDTO.getPhones().stream().map(this::toPhone).toList();
     }
 
     public Address toAddress(AddressDTO addressDTO){
@@ -40,6 +45,7 @@ public class EmployeeConverter {
         address.setZipCode(addressDTO.getZipCode());
         address.setStreet(addressDTO.getStreet());
         address.setNumber(addressDTO.getNumber());
+        address.setNeighborhood(addressDTO.getNeighborhood());
         address.setCity(addressDTO.getCity());
         address.setState(addressDTO.getState());
         address.setCountry(addressDTO.getCountry());
@@ -55,13 +61,6 @@ public class EmployeeConverter {
         return phone;
     }
 
-    public Department toDepartment(DepartmentDTO departmentDTO){
-        Department department = new Department();
-        department.setName(departmentDTO.getName());
-
-        return department;
-    }
-
     // PARTE QUE CONVERTE DE DTO PARA ENTIDADE
     public EmployeeDTO toEmployeeDTO(Employee employee){
         EmployeeDTO employeeDTO = new EmployeeDTO();
@@ -71,10 +70,19 @@ public class EmployeeConverter {
         employeeDTO.setBirthDate(employee.getBirthDate());
         employeeDTO.setPassword(employee.getPassword());
         employeeDTO.setStatus(employee.getStatus());
-        employeeDTO.setDepartment(toDepartmentDTO(departmentRepository.getReferenceById(employee.getDepartment().getId())));
-        employeeDTO.getAddresses().addAll(employee.getAddresses().stream().map(this::toAddressDTO).toList());
-        employeeDTO.getPhones().addAll(employee.getPhones().stream().map(this::toPhoneDTO).toList());
+        employeeDTO.setDepartment_id(employee.getDepartment_id());
+        employeeDTO.getAddresses().addAll(toAddressDTOList(employee));
+        employeeDTO.getPhones().addAll(toPhoneDTOList(employee));
+
         return employeeDTO;
+    }
+
+    public List<AddressDTO> toAddressDTOList(Employee employee){
+        return employee.getAddresses().stream().map(this::toAddressDTO).toList();
+    }
+
+    public List<PhoneDTO> toPhoneDTOList(Employee employee){
+        return employee.getPhones().stream().map(this::toPhoneDTO).toList();
     }
 
     public AddressDTO toAddressDTO(Address address){
@@ -82,6 +90,7 @@ public class EmployeeConverter {
         addressDTO.setZipCode(address.getZipCode());
         addressDTO.setStreet(address.getStreet());
         addressDTO.setNumber(address.getNumber());
+        addressDTO.setNeighborhood(address.getNeighborhood());
         addressDTO.setCity(address.getCity());
         addressDTO.setState(address.getState());
         addressDTO.setCountry(address.getCountry());

@@ -1,8 +1,8 @@
 package br.com.horadoponto.infrastructure.entities;
 
-import jakarta.persistence.*;
-
 import java.util.Objects;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_address")
@@ -21,6 +21,9 @@ public class Address {
     @Column(name = "number")
     private Long number;
 
+    @Column(name = "neighborhood")
+    private String neighborhood;
+
     @Column(name = "city")
     private String city;
 
@@ -30,17 +33,22 @@ public class Address {
     @Column(name = "country")
     private String country;
 
+    @Column(name = "employee_id")
+    private Long employee_id;
+
     public Address() {
     }
 
-    public Address(Long id, String zipCode, String street, Long number, String city, String state, String country) {
+    public Address(Long id, String zipCode, String street, Long number, String neighborhood, String city, String state, String country, Long employee_id) {
         this.id = id;
         this.zipCode = zipCode;
         this.street = street;
         this.number = number;
+        this.neighborhood = neighborhood;
         this.city = city;
         this.state = state;
         this.country = country;
+        this.employee_id = employee_id;
     }
 
     public Long getId() {
@@ -75,6 +83,14 @@ public class Address {
         this.number = number;
     }
 
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
+    }
+
     public String getCity() {
         return city;
     }
@@ -97,6 +113,14 @@ public class Address {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Long getEmployee_id() {
+        return employee_id;
+    }
+
+    public void setEmployee_id(Long employee_id) {
+        this.employee_id = employee_id;
     }
 
     @Override
