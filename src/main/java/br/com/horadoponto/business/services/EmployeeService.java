@@ -1,10 +1,7 @@
 package br.com.horadoponto.business.services;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-import br.com.horadoponto.infrastructure.exceptions.ConflictException;
-import br.com.horadoponto.infrastructure.exceptions.ResourceNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,48 +9,60 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.horadoponto.business.converters.EmployeeConverter;
 import br.com.horadoponto.controllers.dto.EmployeeDTO;
 import br.com.horadoponto.infrastructure.entities.Employee;
+import br.com.horadoponto.infrastructure.exceptions.ConflictException;
+import br.com.horadoponto.infrastructure.exceptions.ResourceNotFoundException;
+import br.com.horadoponto.infrastructure.repositories.AddressRepository;
+import br.com.horadoponto.infrastructure.repositories.DepartmentRepository;
 import br.com.horadoponto.infrastructure.repositories.EmployeeRepository;
+import br.com.horadoponto.infrastructure.repositories.PhoneRepository;
 
 @Service
 public class EmployeeService {
 
     private EmployeeRepository employeeRepository;
+    private DepartmentRepository departmentRepository;
+    private AddressRepository addressRepository;
+    private PhoneRepository phoneRepository;
     private EmployeeConverter employeeConverter;
     private PasswordEncoder passwordEncoder;
 
-    public EmployeeService(EmployeeRepository employeeRepository, EmployeeConverter employeeConverter, PasswordEncoder passwordEncoder) {
+    public EmployeeService(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository, AddressRepository addressRepository, PhoneRepository phoneRepository, EmployeeConverter employeeConverter, PasswordEncoder passwordEncoder) {
         this.employeeRepository = employeeRepository;
+        this.departmentRepository = departmentRepository;
+        this.addressRepository = addressRepository;
+        this.phoneRepository = phoneRepository;
         this.employeeConverter = employeeConverter;
         this.passwordEncoder = passwordEncoder;
     }
 
-    // Método para buscar todos os usuários registrados
     @Transactional(readOnly = true)
     public List<EmployeeDTO> findAllEmployees(){
         List<Employee> list = employeeRepository.findAll();
-        return list.stream().map(x -> employeeConverter.toEmployeeDTO(x)).collect(Collectors.toList());
+        return list.stream().map(employee -> employeeConverter.toEmployeeDTO(employee)).toList();
     }
 
     @Transactional(readOnly = true)
-    public EmployeeDTO findUserByEmail(String email){
-        try {
-            return employeeConverter.toEmployeeDTO(
-                        employeeRepository.findByEmail(email)
-                            .orElseThrow(() -> new ResourceNotFoundException("E-mail não encontrado " + email)));
-        } catch (ResourceNotFoundException e){
-            throw new ResourceNotFoundException("E-mail não encontrado " + email);
-        }
+    public List<EmployeeDTO> findEmployeeByName(String name){
+        List<Employee> list = employeeRepository.findByNameIgnoreCase(name);
+        return list.stream().map(employee -> employeeConverter.toEmployeeDTO(employee)).toList();
     }
 
     @Transactional
-    public EmployeeDTO saveUser(EmployeeDTO employeeDTO){
+    public EmployeeDTO saveEmployee(EmployeeDTO employeeDTO){
         emailExists(employeeDTO.getEmail());
         employeeDTO.setPassword(passwordEncoder.encode(employeeDTO.getPassword()));
         Employee employee = employeeConverter.toEmployee(employeeDTO);
-        return employeeConverter.toEmployeeDTO(
-                employeeRepository.save(employee)
-        );
 
+        return employeeConverter.toEmployeeDTO(employeeRepository.save(employee));
+    }
+
+    @Transactional
+    public void deleteEmployee(Long id){
+        if (employeeRepository.existsById(id)){
+            employeeRepository.deleteById(id);
+        } else {
+            throw new ResourceNotFoundException("ID solicitado não existe. Não será possível excluir.");
+        }
     }
 
     public void emailExists(String email){

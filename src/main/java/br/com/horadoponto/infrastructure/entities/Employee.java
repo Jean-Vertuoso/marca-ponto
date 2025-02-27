@@ -31,14 +31,11 @@ public class Employee implements Serializable {
     @Column(name = "status")
     private EmployeeStatus status;
 
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
+    @Column(name = "department_id")
+    private Long department_id;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "tb_employee_address",
-            joinColumns = @JoinColumn(name = "employee_id"),
-            inverseJoinColumns = @JoinColumn(name = "address_id"))
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private List<Address> addresses = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -51,19 +48,19 @@ public class Employee implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
-    private List<TimeEntry> timeEntries = new ArrayList<>();
+    private Set<TimeEntry> timeEntries = new HashSet<>();
 
     public Employee() {
     }
 
-    public Employee(Department department, EmployeeStatus status, String password, LocalDate birthDate, String email, String name, Long id) {
-        this.department = department;
-        this.status = status;
-        this.password = password;
-        this.birthDate = birthDate;
-        this.email = email;
-        this.name = name;
+    public Employee(Long id, String name, String email, LocalDate birthDate, String password, EmployeeStatus status, Long department_id) {
         this.id = id;
+        this.name = name;
+        this.email = email;
+        this.birthDate = birthDate;
+        this.password = password;
+        this.status = status;
+        this.department_id = department_id;
     }
 
     public Long getId() {
@@ -114,12 +111,12 @@ public class Employee implements Serializable {
         this.status = status;
     }
 
-    public Department getDepartment() {
-        return department;
+    public Long getDepartment_id() {
+        return department_id;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDepartment_id(Long department_id) {
+        this.department_id = department_id;
     }
 
     public List<Address> getAddresses() {
@@ -134,7 +131,7 @@ public class Employee implements Serializable {
         return absenceRegistries;
     }
 
-    public List<TimeEntry> getTimeEntries() {
+    public Set<TimeEntry> getTimeEntries() {
         return timeEntries;
     }
 
