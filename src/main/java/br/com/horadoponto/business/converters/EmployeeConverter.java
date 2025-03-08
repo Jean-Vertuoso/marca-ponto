@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import br.com.horadoponto.controllers.dto.AddressDTO;
-import br.com.horadoponto.controllers.dto.DepartmentDTO;
-import br.com.horadoponto.controllers.dto.EmployeeDTO;
-import br.com.horadoponto.controllers.dto.PhoneDTO;
+import br.com.horadoponto.business.dto.AddressDTO;
+import br.com.horadoponto.business.dto.DepartmentDTO;
+import br.com.horadoponto.business.dto.EmployeeDTO;
+import br.com.horadoponto.business.dto.PhoneDTO;
 import br.com.horadoponto.infrastructure.entities.Address;
 import br.com.horadoponto.infrastructure.entities.Department;
 import br.com.horadoponto.infrastructure.entities.Employee;
@@ -16,7 +16,6 @@ import br.com.horadoponto.infrastructure.entities.Phone;
 @Component
 public class EmployeeConverter {
 
-    // PARTE QUE CONVERTE DE DTO PARA DTO
     public Employee toEmployee(EmployeeDTO employeeDTO){
         Employee employee = new Employee();
 
@@ -61,7 +60,6 @@ public class EmployeeConverter {
         return phone;
     }
 
-    // PARTE QUE CONVERTE DE DTO PARA ENTIDADE
     public EmployeeDTO toEmployeeDTO(Employee employee){
         EmployeeDTO employeeDTO = new EmployeeDTO();
 

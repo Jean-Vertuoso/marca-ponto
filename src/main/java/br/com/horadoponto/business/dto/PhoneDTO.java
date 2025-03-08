@@ -1,4 +1,4 @@
-package br.com.horadoponto.controllers.dto;
+package br.com.horadoponto.business.dto;
 
 public class PhoneDTO {
 

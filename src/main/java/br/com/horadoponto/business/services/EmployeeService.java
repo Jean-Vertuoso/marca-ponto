@@ -7,44 +7,45 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.horadoponto.business.converters.EmployeeConverter;
-import br.com.horadoponto.controllers.dto.EmployeeDTO;
+import br.com.horadoponto.business.dto.EmployeeDTO;
 import br.com.horadoponto.infrastructure.entities.Employee;
 import br.com.horadoponto.infrastructure.exceptions.ConflictException;
 import br.com.horadoponto.infrastructure.exceptions.ResourceNotFoundException;
-import br.com.horadoponto.infrastructure.repositories.AddressRepository;
-import br.com.horadoponto.infrastructure.repositories.DepartmentRepository;
 import br.com.horadoponto.infrastructure.repositories.EmployeeRepository;
-import br.com.horadoponto.infrastructure.repositories.PhoneRepository;
+import br.com.horadoponto.infrastructure.security.JwtUtil;
 
 @Service
 public class EmployeeService {
 
-    private EmployeeRepository employeeRepository;
-    private DepartmentRepository departmentRepository;
-    private AddressRepository addressRepository;
-    private PhoneRepository phoneRepository;
-    private EmployeeConverter employeeConverter;
-    private PasswordEncoder passwordEncoder;
+    private final EmployeeRepository employeeRepository;
+    private final EmployeeConverter employeeConverter;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
 
-    public EmployeeService(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository, AddressRepository addressRepository, PhoneRepository phoneRepository, EmployeeConverter employeeConverter, PasswordEncoder passwordEncoder) {
+    public EmployeeService(EmployeeRepository employeeRepository, EmployeeConverter employeeConverter, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
         this.employeeRepository = employeeRepository;
-        this.departmentRepository = departmentRepository;
-        this.addressRepository = addressRepository;
-        this.phoneRepository = phoneRepository;
         this.employeeConverter = employeeConverter;
         this.passwordEncoder = passwordEncoder;
+        this.jwtUtil = jwtUtil;
     }
 
     @Transactional(readOnly = true)
     public List<EmployeeDTO> findAllEmployees(){
         List<Employee> list = employeeRepository.findAll();
-        return list.stream().map(employee -> employeeConverter.toEmployeeDTO(employee)).toList();
+        return list.stream().map(employeeConverter::toEmployeeDTO).toList();
     }
 
     @Transactional(readOnly = true)
     public List<EmployeeDTO> findEmployeeByName(String name){
         List<Employee> list = employeeRepository.findByNameIgnoreCase(name);
-        return list.stream().map(employee -> employeeConverter.toEmployeeDTO(employee)).toList();
+        return list.stream().map(employeeConverter::toEmployeeDTO).toList();
+    }
+
+    @Transactional(readOnly = true)
+    public EmployeeDTO findEmployeeById(Long id){
+        Employee employee = employeeRepository.findById(id)
+                                .orElseThrow(() -> new ResourceNotFoundException("Id não encontrado."));
+        return employeeConverter.toEmployeeDTO(employee);
     }
 
     @Transactional
@@ -63,6 +64,18 @@ public class EmployeeService {
         } else {
             throw new ResourceNotFoundException("ID solicitado não existe. Não será possível excluir.");
         }
+    }
+
+    @Transactional(readOnly = true)
+    public Long getAuthenticatedEmployeeId(String token){
+        String email = jwtUtil.extrairEmailToken(token.substring(7));
+        Employee employee = employeeRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado"));
+        return employee.getId();
+    }
+
+    @Transactional(readOnly = true)
+    public String getAuthenticatedEmployeeEmail(String token){
+        return jwtUtil.extrairEmailToken(token.substring(7));
     }
 
     public void emailExists(String email){
