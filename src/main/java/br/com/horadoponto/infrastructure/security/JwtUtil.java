@@ -1,13 +1,15 @@
 package br.com.horadoponto.infrastructure.security;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
+
+import br.com.horadoponto.infrastructure.entities.Employee;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.stereotype.Service;
 
-import java.nio.charset.StandardCharsets;
-import java.util.Date;
+import org.springframework.stereotype.Service;
 
 @Service
 public class JwtUtil {

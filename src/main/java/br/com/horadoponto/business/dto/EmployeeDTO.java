@@ -1,4 +1,4 @@
-package br.com.horadoponto.controllers.dto;
+package br.com.horadoponto.business.dto;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,6 +8,7 @@ import br.com.horadoponto.infrastructure.entities.enums.EmployeeStatus;
 
 public class EmployeeDTO {
 
+    private Long id;
     private String name;
     private String email;
     private LocalDate birthDate;
@@ -23,13 +24,22 @@ public class EmployeeDTO {
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(String name, String email, LocalDate birthDate, String password, EmployeeStatus status, Long department_id) {
+    public EmployeeDTO(Long id, String name, String email, LocalDate birthDate, String password, EmployeeStatus status, Long department_id) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
         this.password = password;
         this.status = status;
         this.department_id = department_id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

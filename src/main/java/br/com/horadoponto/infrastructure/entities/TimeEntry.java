@@ -17,20 +17,16 @@ public class TimeEntry implements Serializable {
     @Column(name = "moment")
     private Instant moment;
 
-    @ManyToOne
-    @JoinColumn(name = "employee_id")
-    private Employee employee;
-
-    @OneToOne(mappedBy = "timeEntry", cascade = CascadeType.ALL)
-    private Email email;
+    @Column(name = "employee_id")
+    private Long employee_id;
 
     public TimeEntry() {
     }
 
-    public TimeEntry(Long id, Instant moment, Employee employee) {
+    public TimeEntry(Long id, Instant moment, Long employee_id) {
         this.id = id;
         this.moment = moment;
-        this.employee = employee;
+        this.employee_id = employee_id;
     }
 
     public Long getId() {
@@ -49,20 +45,12 @@ public class TimeEntry implements Serializable {
         this.moment = moment;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public Long getEmployee_id() {
+        return employee_id;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public Email getEmail() {
-        return email;
-    }
-
-    public void setEmail(Email email) {
-        this.email = email;
+    public void setEmployee_id(Long employee_id) {
+        this.employee_id = employee_id;
     }
 
     @Override
