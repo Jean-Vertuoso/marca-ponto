@@ -1,6 +1,10 @@
 package br.com.horadoponto.infrastructure.entities;
 
+import java.time.Instant;
+
 import jakarta.persistence.*;
+
+import br.com.horadoponto.infrastructure.entities.enums.EmailStatus;
 
 @Entity
 @Table(name = "tb_email")
@@ -10,24 +14,23 @@ public class Email {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "sent_at")
+    private Instant sentAT;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "status")
+    private EmailStatus status;
 
-    @OneToOne
-    @MapsId
-    private TimeEntry timeEntry;
+    @Column(name = "time_entry_id")
+    private Long timeEntry_id;
 
     public Email() {
     }
 
-    public Email(Long id, String title, String description, TimeEntry timeEntry) {
+    public Email(Long id, Instant sendAt, EmailStatus status, Long timeEntry_id) {
         this.id = id;
-        this.title = title;
-        this.description = description;
-        this.timeEntry = timeEntry;
+        this.sentAT = sendAt;
+        this.status = status;
+        this.timeEntry_id = timeEntry_id;
     }
 
     public Long getId() {
@@ -38,27 +41,27 @@ public class Email {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public Instant getSentAT() {
+        return sentAT;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSentAT(Instant sentAT) {
+        this.sentAT = sentAT;
     }
 
-    public String getDescription() {
-        return description;
+    public EmailStatus getStatus() {
+        return status;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setStatus(EmailStatus status) {
+        this.status = status;
     }
 
-    public TimeEntry getTimeEntry() {
-        return timeEntry;
+    public Long getTimeEntry_id() {
+        return timeEntry_id;
     }
 
-    public void setTimeEntry(TimeEntry timeEntry) {
-        this.timeEntry = timeEntry;
+    public void setTimeEntry_id(Long timeEntry_id) {
+        this.timeEntry_id = timeEntry_id;
     }
 }

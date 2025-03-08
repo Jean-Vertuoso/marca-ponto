@@ -6,22 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="55350ae1-5532-44fe-b6ea-47750396c822" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/HoradopontoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/HoradopontoApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/converters/EmployeeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/converters/EmployeeConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/services/EmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/AddressDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/AddressDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/DepartmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/DepartmentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/EmployeeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/PhoneDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/PhoneDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Phone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Phone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/repositories/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/repositories/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/notimport.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/import.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/AbsenceRegistryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/AbsenceRegistryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/AddressDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/AddressDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/DepartmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/DepartmentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/EmployeeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/PhoneDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/PhoneDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/TimeEntryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/TimeEntryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/config/TestConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/TimeEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/TimeEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/enums/EmployeeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/enums/EmployeeStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -57,10 +60,13 @@
     &quot;Application.br.com.horadoponto.HoradopontoApplication.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/lista__de__empregados__por__nome&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jean Vertuoso/Documents/Backups/Devmedia/Backend/Java/horadoponto&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jean Vertuoso/Documents/Backups/Devmedia/Backend/Java/DocPlus/docPlus - backend/docPlus -&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
@@ -71,9 +77,9 @@
       <recent name="C:\Users\Jean Vertuoso\Documents\Backups\Devmedia\Backend\Java\horadoponto\src\main\java\br\com\horadoponto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.horadoponto.infrastructure.exceptions" />
       <recent name="br.com.horadoponto.infrastructure.repositories" />
       <recent name="br.com.horadoponto.infrastructure.entities" />
-      <recent name="br.com.horadoponto.infrastructure.exceptions" />
     </key>
   </component>
   <component name="RunManager" selected="Application.br.com.horadoponto.HoradopontoApplication">

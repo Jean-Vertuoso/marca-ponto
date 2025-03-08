@@ -9,7 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.horadoponto.business.services.EmployeeService;
-import br.com.horadoponto.controllers.dto.EmployeeDTO;
+import br.com.horadoponto.business.dto.EmployeeDTO;
 import br.com.horadoponto.infrastructure.security.JwtUtil;
 
 @RestController
