@@ -5,24 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55350ae1-5532-44fe-b6ea-47750396c822" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/converters/EmailConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/dto/in/DepartmentDTORequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/services/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/HoradopontoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/HoradopontoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/converters/EmployeeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/converters/EmployeeConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/services/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/AbsenceRegistryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/AbsenceRegistryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/AddressDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/AddressDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/DepartmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/DepartmentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/EmployeeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/PhoneDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/PhoneDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/dto/TimeEntryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/TimeEntryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/config/TestConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/TimeEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/TimeEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/enums/EmployeeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/enums/EmployeeStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/HoradopontoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/MarcapontoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/converters/EmailConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/converters/EmployeeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/converters/EmployeeConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/converters/TimeEntryConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/converters/TimeEntryConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/AbsenceRegistryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/dto/in/AbsenceRegistryDTORequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/AddressDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/dto/in/AddressDTORequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/DepartmentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/dto/in/EmployeeDTORequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/PhoneDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/dto/in/PhoneDTORequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/dto/TimeEntryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/dto/out/TimeEntryDTOResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/services/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/services/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/business/services/TimeEntryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/business/services/TimeEntryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/controllers/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/controllers/TimeEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/controllers/TimeEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/AbsenceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/AbsenceRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Phone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/Phone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/SickLeave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/SickLeave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/TimeEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/TimeEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/Vacation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/Vacation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/enums/EmailStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/enums/EmailStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/entities/enums/EmployeeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/entities/enums/EmployeeStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/exceptions/ConflictException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/exceptions/ConflictException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/exceptions/MailAuthenticationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/exceptions/MailAuthenticationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/exceptions/MailSendException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/exceptions/MailSendException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/exceptions/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/exceptions/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/repositories/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/repositories/AddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/repositories/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/repositories/DepartmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/repositories/EmailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/repositories/EmailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/repositories/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/repositories/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/repositories/PhoneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/repositories/PhoneRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/repositories/TimeEntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/repositories/TimeEntryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/security/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/security/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/horadoponto/infrastructure/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/marcaponto/infrastructure/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,13 +66,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -57,13 +93,15 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.HoradopontoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MarcapontoApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.br.com.horadoponto.HoradopontoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/corrigindo__servico__email&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jean Vertuoso/Documents/Backups/Devmedia/Backend/Java/DocPlus/docPlus - backend/docPlus -&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jean Vertuoso/Documents/Backups/Devmedia/Backend/Java/marca-ponto&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -72,20 +110,22 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jean Vertuoso\Documents\Backups\Devmedia\Backend\Java\horadoponto\src\main\java\br\com\horadoponto\business\dto\out" />
       <recent name="C:\Users\Jean Vertuoso\Documents\Backups\Devmedia\Backend\Java\horadoponto\src\main\java\br\com\horadoponto\infrastructure" />
       <recent name="C:\Users\Jean Vertuoso\Documents\Backups\Devmedia\Backend\Java\horadoponto\src\main" />
       <recent name="C:\Users\Jean Vertuoso\Documents\Backups\Devmedia\Backend\Java\horadoponto\src\main\java\br\com\horadoponto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.com.horadoponto.infrastructure.exceptions" />
+      <recent name="br.com.horadoponto.business.dto.in" />
       <recent name="br.com.horadoponto.infrastructure.repositories" />
       <recent name="br.com.horadoponto.infrastructure.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.br.com.horadoponto.HoradopontoApplication">
+  <component name="RunManager" selected="Application.MarcapontoApplication">
     <configuration name="HoradopontoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.horadoponto.horadoponto.HoradopontoApplication" />
-      <module name="horadoponto" />
+      <module name="marca-ponto" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.com.horadoponto.horadoponto.*" />
@@ -96,12 +136,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="br.com.horadoponto.HoradopontoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.horadoponto.HoradopontoApplication" />
-      <module name="horadoponto" />
+    <configuration name="MarcapontoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.marcaponto.MarcapontoApplication" />
+      <module name="marca-ponto" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.horadoponto.*" />
+          <option name="PATTERN" value="br.com.marcaponto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,7 +151,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.br.com.horadoponto.HoradopontoApplication" />
+        <item itemvalue="Application.MarcapontoApplication" />
         <item itemvalue="Application.HoradopontoApplication" />
       </list>
     </recent_temporary>
