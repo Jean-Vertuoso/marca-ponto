@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Notificação de Registro de Ponto</title>
+    </head>
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <p>Olá <span th:text="${employeeName}">Nome do Empregado</span>,</p>
+
+        <p>Seu registro de ponto foi realizado com sucesso! Aqui estão os detalhes:</p>
+
+        <ul>
+            <li><strong>Data:</strong> <span th:text="${date}">DD/MM/AAAA</span></li>
+            <li><strong>Horário:</strong> <span th:text="${time}">HH:mm</span></li>
+        </ul>
+
+        <p>Se você não realizou este registro ou tiver alguma dúvida, entre em contato com o RH.</p>
+
+        <p>Atenciosamente,</p>
+        <p><strong>Equipe MarcaPonto</strong></p>
+    </body>
+</html>

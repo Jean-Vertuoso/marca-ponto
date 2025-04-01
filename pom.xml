@@ -8,11 +8,11 @@
 		<version>3.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.horadoponto</groupId>
-	<artifactId>horadoponto</artifactId>
+	<groupId>br.com.marcaponto</groupId>
+	<artifactId>marca-ponto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>horadoponto</name>
-	<description>Aplicação de ponto eletrônico</description>
+	<name>marca-ponto</name>
+	<description>Aplicação de registro de ponto eletrônico</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -93,6 +93,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 			<version>4.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		
 		<dependency>
